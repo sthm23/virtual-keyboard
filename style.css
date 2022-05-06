@@ -32,7 +32,7 @@ textarea{
     margin: 10px auto;
 }
 .keyboards{
-    width: 665px;
+    width: 656px;
     background-color:#8f8f8f;
     border: 2px solid black;
     padding: 5px;
@@ -139,7 +139,7 @@ textarea{
     border-radius: 15%;
 }
 .space{
-    width: 270px;    
+    width: 260px;    
 }
 .space:active{
     transition: all 0.2s;
