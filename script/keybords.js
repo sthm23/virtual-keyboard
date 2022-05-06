@@ -286,8 +286,8 @@ export const keys = [
         'ru': 'Del',
         "keyCode": 46,
         "which": 46,
-        "code": "NumpadDecimal",
-
+        // "code": "NumpadDecimal",
+        "code": 'Delete',
         "altKey": false,
         "ctrlKey": false,
         "metaKey": false,
@@ -550,7 +550,7 @@ export const keys = [
         'ru': "Shift",
         "keyCode": 16,
         "which": 16,
-        "code": "ShiftLeft",
+        "code": "ShiftRight",
         
         "description": "Rshift",
         "unicode": "⇧"
@@ -616,7 +616,7 @@ export const keys = [
         'ru': "Alt",
         "keyCode": 18,
         "which": 18,
-        "code": "AltLeft",
+        "code": "AltRight",
         
         "altKey": true,
         "ctrlKey": false,
@@ -672,7 +672,7 @@ export const keys = [
         'ru': "ctrl",
         "keyCode": 17,
         "which": 17,
-        "code": "ControlLeft",
+        "code": "ControlRight",
         
         "altKey": true,
         "ctrlKey": false,

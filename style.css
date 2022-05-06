@@ -65,6 +65,11 @@ textarea{
     background-color:#94bbe9;
     border-radius: 30%;
 }
+.key-active{
+    transition: all 0.2s;
+    background-color:#94bbe9;
+    border-radius: 30%;
+}
 .backspace{
     width: 100px;
 }
@@ -73,6 +78,7 @@ textarea{
     background-color:#94bbe9;
     border-radius: 10px;
 }
+
 .tab, .del{
     width: 48px;
 }
