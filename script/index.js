@@ -1,8 +1,9 @@
-import {main, wrapper, title, textarea, keyboards, subtitle, shiftActive,
-    innerTextHTML, notSwitcher, subtitleBottom, buttons, innerEngTitle, innerRuTitle} from './main.js';
-import * as footerItems from './footer.js';
-
+import {textarea, keyboards, shiftActive, innerRuTextHTML,
+    innerTextHTML, notSwitcher, buttons, innerEngTitle, innerRuTitle} from "./main.js";
+import {createFooter} from "./footer.js";
+createFooter();
 const body = document.body;
+
 const obj = {
     CapsLock: false,
     shift: false,
@@ -12,18 +13,24 @@ const obj = {
     }
 };
 
-innerTextHTML();
+
 function languageChanger(){
     if(obj.lang.eng){
+        obj.lang.eng = false;
+        obj.lang.ru = true;
         innerEngTitle();
+        innerTextHTML();
     }else{
+        obj.lang.eng = true;
+        obj.lang.ru = false;
         innerRuTitle();
+        innerRuTextHTML();
     }
 }
 languageChanger();
-
+innerTextHTML();
 //write with mouse
-keyboards.tag.addEventListener('click', (e)=>{
+keyboards.tag.addEventListener("click", (e)=>{
     const target = e.target;
     buttons.forEach(item=>{
         if(item.tag == target){
@@ -35,37 +42,37 @@ keyboards.tag.addEventListener('click', (e)=>{
 
 
 //keyboard 
-body.addEventListener('keydown', (e)=>{
+body.addEventListener("keydown", (e)=>{
     e.preventDefault();
 
     buttons.forEach(item=>{
-        
         if(item.tag.dataset.key === e.code){
-            item.addClassList('key-active');
+            item.addClassList("key-active");
             write(item.tag);
-            if(item.tag.textContent == 'Shift'){
+            if(item.tag.textContent == "Shift"){
                 if(!obj.shift){
                     obj.shift = true;
                     shiftActive();
                 }
+            }else if(obj.shift && item.tag.textContent == "Alt"){
+                languageChanger();
             }
-            
-            
         }
+        
     });
 });
-body.addEventListener('keyup', (e)=>{
+body.addEventListener("keyup", (e)=>{
     e.preventDefault();
 
     buttons.forEach(item=>{
         if(item.tag.dataset.key === e.code){
-            item.tag.classList.remove('key-active');
+            item.tag.classList.remove("key-active");
             // if(item.tag.dataset.key === e.code){
-                if(item.tag.textContent == 'Shift'){
+                if(item.tag.textContent == "Shift"){
                     if(obj.shift){
                         obj.shift = false;
                         // shiftDeactive();
-                        innerTextHTML()
+                        innerTextHTML();
                     }
                 }
             // }
@@ -73,46 +80,42 @@ body.addEventListener('keyup', (e)=>{
     });
 });
 
-function write(elem, item){
-    if(elem.textContent == 'Backspace'){
-        let str = removeLeft(textarea.tag.value);
-        textarea.tag.value = str;
-    }else if(elem.textContent == 'Space'){
-        textarea.tag.value += ' ';
-    }else if(elem.textContent == 'Enter'){
-        textarea.tag.value += '\n';
-    }else if(elem.textContent == 'Tab'){
-        textarea.tag.value += '    ';
-    }else if(elem.textContent == 'Window'){
-        
-    }else if(elem.textContent == 'CapsLock'){
+function write(elem){
+    if(elem.textContent == "Backspace"){
+        if(textarea.tag.selectionStart){
+            textarea.tag.setRangeText("", textarea.tag.selectionStart-1, textarea.tag.selectionEnd, "end");
+        }
+    }else if(elem.textContent == "Space"){
+        textarea.tag.value += " ";
+    }else if(elem.textContent == "Enter"){
+        textarea.tag.value += "\n";
+    }else if(elem.textContent == "Tab"){
+        textarea.tag.value += "    ";
+    }else if(elem.textContent == "Window"){
+        // кнопка виндов не будет работать
+    }else if(elem.textContent == "CapsLock"){
         if(!obj.CapsLock){
             capslockSwitcher();
             obj.CapsLock = true;
-            elem.classList.toggle('caps-lock-active');
+            elem.classList.toggle("caps-lock-active");
         }else{
             capslockSwitcher();
             obj.CapsLock = false;
-            elem.classList.toggle('caps-lock-active');
+            elem.classList.toggle("caps-lock-active");
         }
-    }else if(elem.textContent == 'Shift'){
-
-    }else if(elem.textContent == 'Del'){
-        
-    }else if(elem.textContent == 'ctrl'){
-        
-    }else if(elem.textContent == 'Alt'){
-        
+    }else if(elem.textContent == "Shift"){
+        // кнопка виндов не будет работать
+    }else if(elem.textContent == "Del"){
+        if(textarea.tag.selectionEnd+1){
+            textarea.tag.setRangeText("", textarea.tag.selectionStart, textarea.tag.selectionEnd+1, "end");
+        }
+    }else if(elem.textContent == "ctrl"){
+       // кнопка виндов не будет работать
+    }else if(elem.textContent == "Alt"){
+        // кнопка виндов не будет работать
     }else{
-        textarea.tag.value += elem.textContent;
+        textarea.tag.setRangeText(elem.textContent, textarea.tag.selectionStart, textarea.tag.selectionEnd, "end");
     }
-}
-
-function removeLeft(str){
-    let len = str.length-1;
-    let a = str.split('');
-    a.splice(len, 1);
-    return a.join('');
 }
 
 function capslockSwitcher(){
@@ -129,4 +132,3 @@ function capslockSwitcher(){
     });
 }
 // capslockSwitcher();
-

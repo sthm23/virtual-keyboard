@@ -1,8 +1,8 @@
 export const keys = [
     {
         "eng": "`",
-        'ru': "ё",
-        'shift': "~",
+        "ru": "ё",
+        "shift": "~",
         "keyCode": 192,
         "which": 192,
         "code": "Backquote",
@@ -10,8 +10,8 @@ export const keys = [
     },
     {
         "eng": "1",
-        'ru': "1",
-        'shift': '!',
+        "ru": "1",
+        "shift": "!",
         "keyCode": 49,
         "which": 49,
         "code": "Digit1",
@@ -20,8 +20,8 @@ export const keys = [
     },
     {
         "eng": "2",
-        'ru': "2",
-        'shift': '@',
+        "ru": "2",
+        "shift": "@",
         "keyCode": 50,
         "which": 50,
         "code": "Digit2",
@@ -31,8 +31,8 @@ export const keys = [
     },
     {
         "eng": "3",
-        'ru': "3",
-        'shift': '#',
+        "ru": "3",
+        "shift": "#",
         "keyCode": 51,
         "which": 51,
         "code": "Digit3",
@@ -42,8 +42,8 @@ export const keys = [
     },
     {
         "eng": "4",
-        'ru': "4",
-        'shift': '$',
+        "ru": "4",
+        "shift": "$",
         "keyCode": 52,
         "which": 52,
         "code": "Digit4",
@@ -53,8 +53,8 @@ export const keys = [
     },
     {
         "eng": "5",
-        'ru': "5",
-        'shift': '%',
+        "ru": "5",
+        "shift": "%",
         "keyCode": 53,
         "which": 53,
         "code": "Digit5",
@@ -64,8 +64,8 @@ export const keys = [
     },
     {
         "eng": "6",
-        'ru': "6",
-        'shift': '^',
+        "ru": "6",
+        "shift": "^",
         "keyCode": 54,
         "which": 54,
         "code": "Digit6",
@@ -75,8 +75,8 @@ export const keys = [
     },
     {
         "eng": "7",
-        'ru': "7",
-        'shift': '&',
+        "ru": "7",
+        "shift": "&",
         "keyCode": 55,
         "which": 55,
         "code": "Digit7",
@@ -86,8 +86,8 @@ export const keys = [
     },
     {
         "eng": "8",
-        'ru': "8",
-        'shift': '*',
+        "ru": "8",
+        "shift": "*",
         "keyCode": 56,
         "which": 56,
         "code": "Digit8",
@@ -97,8 +97,8 @@ export const keys = [
     },
     {
         "eng": "9",
-        'ru': "9",
-        'shift': '(',
+        "ru": "9",
+        "shift": "(",
         "keyCode": 57,
         "which": 57,
         "code": "Digit9",
@@ -108,8 +108,8 @@ export const keys = [
     },
     {
         "eng": "0",
-        'ru': "0",
-        'shift': ')',
+        "ru": "0",
+        "shift": ")",
         "keyCode": 48,
         "which": 48,
         "code": "Digit0",
@@ -119,8 +119,8 @@ export const keys = [
     },
     {
         "eng": "-",
-        'ru': "-",
-        'shift': '_',
+        "ru": "-",
+        "shift": "_",
         "keyCode": 109,
         "which": 109,
         "code": "NumpadSubtract",
@@ -129,8 +129,8 @@ export const keys = [
     },
     {
         "eng": "=",
-        'ru': "=",
-        'shift': '+',
+        "ru": "=",
+        "shift": "+",
         "keyCode": 61,
         "which": 61,
         "code": "Equal",
@@ -139,7 +139,7 @@ export const keys = [
     },
     {
         "eng": "Backspace",
-        'ru': "Backspace",
+        "ru": "Backspace",
         "keyCode": 8,
         "which": 8,
         "code": "Backspace",
@@ -149,7 +149,7 @@ export const keys = [
     },
     {
         "eng": "Tab",
-        'ru': "Tab",
+        "ru": "Tab",
         "keyCode": 9,
         "which": 9,
         "code": "Tab",
@@ -159,7 +159,7 @@ export const keys = [
     },
     {
         "eng": "q",
-        'ru': "й",
+        "ru": "й",
         "keyCode": 81,
         "which": 81,
         "code": "KeyQ",
@@ -168,7 +168,7 @@ export const keys = [
     },
     {
         "eng": "w",
-        'ru': "ц",
+        "ru": "ц",
         "keyCode": 87,
         "which": 87,
         "code": "KeyW",
@@ -177,7 +177,7 @@ export const keys = [
     },
     {
         "eng": "e",
-        'ru': "у",
+        "ru": "у",
         "keyCode": 69,
         "which": 69,
         "code": "KeyE",
@@ -186,7 +186,7 @@ export const keys = [
     },
     {
         "eng": "r",
-        'ru': "к",
+        "ru": "к",
         "keyCode": 82,
         "which": 82,
         "code": "KeyR",
@@ -195,7 +195,7 @@ export const keys = [
     },
     {
         "eng": "t",
-        'ru': "е",
+        "ru": "е",
         "keyCode": 84,
         "which": 84,
         "code": "KeyT",
@@ -204,7 +204,7 @@ export const keys = [
     },
     {
         "eng": "y",
-        'ru': "н",
+        "ru": "н",
         "keyCode": 89,
         "which": 89,
         "code": "KeyY",
@@ -213,7 +213,7 @@ export const keys = [
     },
     {
         "eng": "u",
-        'ru': "г",
+        "ru": "г",
         "keyCode": 85,
         "which": 85,
         "code": "KeyU",
@@ -222,7 +222,7 @@ export const keys = [
     },
     {
         "eng": "i",
-        'ru': "ш",
+        "ru": "ш",
         "keyCode": 73,
         "which": 73,
         "code": "KeyI",
@@ -231,7 +231,7 @@ export const keys = [
     },
     {
         "eng": "o",
-        'ru': "щ",
+        "ru": "щ",
         "keyCode": 79,
         "which": 79,
         "code": "KeyO",
@@ -240,7 +240,7 @@ export const keys = [
     },
     {
         "eng": "p",
-        'ru': "з",
+        "ru": "з",
         "keyCode": 80,
         "which": 80,
         "code": "KeyP",
@@ -249,8 +249,8 @@ export const keys = [
     },
     {
         "eng": "[",
-        'ru': "х",
-        'shift': '{',
+        "ru": "х",
+        "shift": "{",
         "keyCode": 160,
         "which": 160,
         "code": "BracketLeft",
@@ -263,8 +263,8 @@ export const keys = [
     },
     {
         "eng": "]",
-        'ru': "ъ",
-        'shift': '}',
+        "ru": "ъ",
+        "shift": "}",
         "keyCode": 221,
         "which": 221,
         "code": "BracketRight",
@@ -273,8 +273,8 @@ export const keys = [
     },
     {
         "eng": "\\",
-        'ru': "\\",
-        'shift': '|',
+        "ru": "\\",
+        "shift": "|",
         "keyCode": 220,
         "which": 220,
         "code": "Backslash",
@@ -283,11 +283,11 @@ export const keys = [
     },
     {
         "eng": "Del",
-        'ru': 'Del',
+        "ru": "Del",
         "keyCode": 46,
         "which": 46,
         // "code": "NumpadDecimal",
-        "code": 'Delete',
+        "code": "Delete",
         "altKey": false,
         "ctrlKey": false,
         "metaKey": false,
@@ -297,7 +297,7 @@ export const keys = [
     },
     {
         "eng": "CapsLock",
-        'ru': "CapsLock",
+        "ru": "CapsLock",
         "keyCode": 20,
         "which": 20,
         "code": "CapsLock",
@@ -307,7 +307,7 @@ export const keys = [
     },
     {
         "eng": "a",
-        'ru': "ф",
+        "ru": "ф",
         "keyCode": 65,
         "which": 65,
         "code": "KeyA",
@@ -316,7 +316,7 @@ export const keys = [
     },
     {
         "eng": "s",
-        'ru': "ы",
+        "ru": "ы",
         "keyCode": 83,
         "which": 83,
         "code": "KeyS",
@@ -325,7 +325,7 @@ export const keys = [
     },
     {
         "eng": "d",
-        'ru': "в",
+        "ru": "в",
         "keyCode": 68,
         "which": 68,
         "code": "KeyD",
@@ -334,7 +334,7 @@ export const keys = [
     },
     {
         "eng": "f",
-        'ru': "а",
+        "ru": "а",
         "keyCode": 70,
         "which": 70,
         "code": "KeyF",
@@ -343,7 +343,7 @@ export const keys = [
     },
     {
         "eng": "g",
-        'ru': "п",
+        "ru": "п",
         "keyCode": 71,
         "which": 71,
         "code": "KeyG",
@@ -352,7 +352,7 @@ export const keys = [
     },
     {
         "eng": "h",
-        'ru': "р",
+        "ru": "р",
         "keyCode": 72,
         "which": 72,
         "code": "KeyH",
@@ -361,7 +361,7 @@ export const keys = [
     },
     {
         "eng": "j",
-        'ru': "о",
+        "ru": "о",
         "keyCode": 74,
         "which": 74,
         "code": "KeyJ",
@@ -370,7 +370,7 @@ export const keys = [
     },
     {
         "eng": "k",
-        'ru': "л",
+        "ru": "л",
         "keyCode": 75,
         "which": 75,
         "code": "KeyK",
@@ -383,7 +383,7 @@ export const keys = [
     },
     {
         "eng": "l",
-        'ru': "д",
+        "ru": "д",
         "keyCode": 76,
         "which": 76,
         "code": "KeyL",
@@ -396,8 +396,8 @@ export const keys = [
     },
     {
         "eng": ";",
-        'ru': "ж",
-        'shift': ':',
+        "ru": "ж",
+        "shift": ":",
         "keyCode": 59,
         "which": 59,
         "code": "Semicolon",
@@ -406,8 +406,8 @@ export const keys = [
     },
     {
         "eng": "'",
-        'ru': "э",
-        'shift': '"',
+        "ru": "э",
+        "shift": "\"",
         "keyCode": 222,
         "which": 222,
         "code": "Quote",
@@ -416,7 +416,7 @@ export const keys = [
     },
     {
         "eng": "Enter",
-        'ru': "Enter",
+        "ru": "Enter",
         "keyCode": 13,
         "which": 13,
         "code": "Enter",
@@ -426,7 +426,7 @@ export const keys = [
     },
     {
         "eng": "Shift",
-        'ru': "Shift",
+        "ru": "Shift",
         "keyCode": 16,
         "which": 16,
         "code": "ShiftLeft",
@@ -436,7 +436,7 @@ export const keys = [
     },
     {
         "eng": "z",
-        'ru': "я",
+        "ru": "я",
         "keyCode": 90,
         "which": 90,
         "code": "KeyZ",
@@ -445,7 +445,7 @@ export const keys = [
     },
     {
         "eng": "x",
-        'ru': "ч",
+        "ru": "ч",
         "keyCode": 88,
         "which": 88,
         "code": "KeyX",
@@ -454,7 +454,7 @@ export const keys = [
     },
     {
         "eng": "c",
-        'ru': "с",
+        "ru": "с",
         "keyCode": 67,
         "which": 67,
         "code": "KeyC",
@@ -463,7 +463,7 @@ export const keys = [
     },
     {
         "eng": "v",
-        'ru': "м",
+        "ru": "м",
         "keyCode": 86,
         "which": 86,
         "code": "KeyV",
@@ -472,7 +472,7 @@ export const keys = [
     },
     {
         "eng": "b",
-        'ru': "и",
+        "ru": "и",
         "keyCode": 66,
         "which": 66,
         "code": "KeyB",
@@ -481,7 +481,7 @@ export const keys = [
     },
     {
         "eng": "n",
-        'ru': "т",
+        "ru": "т",
         "keyCode": 78,
         "which": 78,
         "code": "KeyN",
@@ -490,7 +490,7 @@ export const keys = [
     },
     {
         "eng": "m",
-        'ru': "ь",
+        "ru": "ь",
         "keyCode": 77,
         "which": 77,
         "code": "KeyM",
@@ -499,8 +499,8 @@ export const keys = [
     },
     {
         "eng": ",",
-        'ru': "б",
-        'shift': '<',
+        "ru": "б",
+        "shift": "<",
         "keyCode": 108,
         "which": 108,
         "code": "NumpadDecimal",
@@ -513,8 +513,8 @@ export const keys = [
     },
     {
         "eng": ".",
-        'ru': "ю",
-        'shift': '>',
+        "ru": "ю",
+        "shift": ">",
         "keyCode": 190,
         "which": 190,
         "code": "Period",
@@ -523,8 +523,8 @@ export const keys = [
     },
     {
         "eng": "/",
-        'ru': ".",
-        'shift': '?',
+        "ru": ".",
+        "shift": "?",
         "keyCode": 191,
         "which": 191,
         "code": "Slash",
@@ -533,7 +533,7 @@ export const keys = [
     },
     {
         "eng": "▲",
-        'ru': "▲",
+        "ru": "▲",
         "keyCode": 38,
         "which": 38,
         "code": "ArrowUp",
@@ -547,7 +547,7 @@ export const keys = [
     },
     {
         "eng": "Shift",
-        'ru': "Shift",
+        "ru": "Shift",
         "keyCode": 16,
         "which": 16,
         "code": "ShiftRight",
@@ -557,7 +557,7 @@ export const keys = [
     },
     {
         "eng": "ctrl",
-        'ru': "ctrl",
+        "ru": "ctrl",
         "keyCode": 17,
         "which": 17,
         "code": "ControlLeft",
@@ -571,7 +571,7 @@ export const keys = [
     },
     {
         "eng": "Window",
-        'ru': "Window",
+        "ru": "Window",
         "keyCode": 91,
         "which": 91,
         "code": "MetaLeft",
@@ -585,7 +585,7 @@ export const keys = [
     },
     {
         "eng": "Alt",
-        'ru': "Alt",
+        "ru": "Alt",
         "keyCode": 18,
         "which": 18,
         "code": "AltLeft",
@@ -599,7 +599,7 @@ export const keys = [
     },
     {
         "eng": "Space",
-        'ru': "Space",
+        "ru": "Space",
         "keyCode": 32,
         "which": 32,
         "code": "Space",
@@ -613,7 +613,7 @@ export const keys = [
     },
     {
         "eng": "Alt",
-        'ru': "Alt",
+        "ru": "Alt",
         "keyCode": 18,
         "which": 18,
         "code": "AltRight",
@@ -627,7 +627,7 @@ export const keys = [
     },
     {
         "eng": "◄",
-        'ru': "◄",
+        "ru": "◄",
         "keyCode": 37,
         "which": 37,
         "code": "ArrowLeft",
@@ -641,7 +641,7 @@ export const keys = [
     },
     {
         "eng": "▼",
-        'ru': "▼",
+        "ru": "▼",
         "keyCode": 40,
         "which": 40,
         "code": "ArrowDown",
@@ -655,7 +655,7 @@ export const keys = [
     },
     {
         "eng": "►",
-        'ru': "►",
+        "ru": "►",
         "keyCode": 39,
         "which": 39,
         "code": "ArrowRight",
@@ -669,7 +669,7 @@ export const keys = [
     },
     {
         "eng": "ctrl",
-        'ru': "ctrl",
+        "ru": "ctrl",
         "keyCode": 17,
         "which": 17,
         "code": "ControlRight",
@@ -684,19 +684,19 @@ export const keys = [
 ];
 export const textTitle = [
     {   
-        title: 'title',
-        eng: 'Virtual Keyboard',
-        ru: 'Виртуалная клавятура',
+        title: "title",
+        eng: "Virtual Keyboard",
+        ru: "Виртуалная клавятура",
     },
     {
-        title: 'subtitle',
-        eng: 'The keyboard was created in the Windows operating system',
-        ru: 'Клавиатура создана в операционной системе Windows',
+        title: "subtitle",
+        eng: "The keyboard was created in the Windows operating system",
+        ru: "Клавиатура создана в операционной системе Windows",
     },
     {
-        title: 'lang-change',
-        eng: 'To switch the language combination: left ctrl + alt',
-        ru: 'Для переключения языка комбинация: левыe ctrl + alt',
+        title: "lang-change",
+        eng: "To switch the language combination: shift + alt",
+        ru: "Для переключения языка комбинация:  shift + alt",
     },
 ];
 
