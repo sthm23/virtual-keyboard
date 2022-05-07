@@ -1,61 +1,70 @@
-import {textarea, keyboards, shiftActive, innerRuTextHTML,
-    innerTextHTML, notSwitcher, buttons, innerEngTitle, innerRuTitle} from "./main.js";
+import {textarea, keyboards, notSwitcher, buttons, innerTitle} from "./main.js";
 import {createFooter} from "./footer.js";
+import {keys} from "./keybords.js";
 createFooter();
 const body = document.body;
 
-const obj = {
+export const obj = {
     CapsLock: false,
     shift: false,
-    lang: {
-        eng: true,
-        ru: false,
-    }
+    ctrl: false,
+    lang: "eng",
 };
 
 
-function languageChanger(){
-    if(obj.lang.eng){
-        obj.lang.eng = false;
-        obj.lang.ru = true;
-        innerEngTitle();
-        innerTextHTML();
-    }else{
-        obj.lang.eng = true;
-        obj.lang.ru = false;
-        innerRuTitle();
-        innerRuTextHTML();
-    }
-}
-languageChanger();
-innerTextHTML();
+
+
+
 //write with mouse
 keyboards.tag.addEventListener("click", (e)=>{
     const target = e.target;
     buttons.forEach(item=>{
         if(item.tag == target){
-            // console.log(item);
-            write(target, item.upper);
+            write(target);
         }
     });
 });
-
-
+keyboards.tag.addEventListener("mousedown", (e)=>{
+    const target = e.target;
+    buttons.forEach(item=>{
+        if(item.tag == target && target.textContent == "Shift"){
+            if(!obj.shift){
+                obj.shift = true;
+                shiftActive();
+            }
+        }else if(item.tag == target && target.textContent == "ctrl"){
+            obj.ctrl = true;
+        }
+    });
+});
+keyboards.tag.addEventListener("mouseup", (e)=>{
+    const target = e.target;
+    buttons.forEach(item=>{
+        if(item.tag == target && target.textContent == "Shift"){
+            if(obj.shift){
+                obj.shift = false;
+                shiftDeactive();
+            }
+        }else if(item.tag == target && target.textContent == "ctrl"){
+            obj.ctrl = false;
+        }
+    });
+});
 //keyboard 
 body.addEventListener("keydown", (e)=>{
     e.preventDefault();
-
     buttons.forEach(item=>{
         if(item.tag.dataset.key === e.code){
             item.addClassList("key-active");
             write(item.tag);
-            if(item.tag.textContent == "Shift"){
+            if(item.tag.textContent === "ctrl"){
+                obj.ctrl = true;
+                
+            }else if(item.tag.textContent == "Shift"){
                 if(!obj.shift){
                     obj.shift = true;
                     shiftActive();
                 }
-            }else if(obj.shift && item.tag.textContent == "Alt"){
-                languageChanger();
             }
         }
         
@@ -67,15 +76,14 @@ body.addEventListener("keyup", (e)=>{
     buttons.forEach(item=>{
         if(item.tag.dataset.key === e.code){
             item.tag.classList.remove("key-active");
-            // if(item.tag.dataset.key === e.code){
                 if(item.tag.textContent == "Shift"){
                     if(obj.shift){
                         obj.shift = false;
-                        // shiftDeactive();
-                        innerTextHTML();
+                        shiftDeactive();
                     }
+                }else if(item.tag.textContent == "ctrl"){
+                    obj.ctrl = false;
                 }
-            // }
         }
     });
 });
@@ -110,9 +118,11 @@ function write(elem){
             textarea.tag.setRangeText("", textarea.tag.selectionStart, textarea.tag.selectionEnd+1, "end");
         }
     }else if(elem.textContent == "ctrl"){
-       // кнопка виндов не будет работать
+        // key ctrl
     }else if(elem.textContent == "Alt"){
-        // кнопка виндов не будет работать
+        if(obj.ctrl){
+            togleLangKeys();
+        }
     }else{
         textarea.tag.setRangeText(elem.textContent, textarea.tag.selectionStart, textarea.tag.selectionEnd, "end");
     }
@@ -131,4 +141,85 @@ function capslockSwitcher(){
         }
     });
 }
-// capslockSwitcher();
+
+function shiftActive(){
+    buttons.forEach((item, ind)=>{
+       if(obj.lang == "ru"){
+        if(!notSwitcher.includes(item.tag.dataset.key)){        
+            if(keys[ind].shift != undefined){
+                 item.tag.textContent = keys[ind].shift;
+            }else{
+                 item.tag.textContent = keys[ind].eng.toUpperCase();
+            }   
+        }
+       }else{
+            if(!notSwitcher.includes(item.tag.dataset.key)){        
+                if(keys[ind].shift != undefined){
+                    item.tag.textContent = keys[ind].shift;
+                }else{
+                    item.tag.textContent = keys[ind].ru.toUpperCase();
+                }   
+            }
+       }
+    });
+}
+function shiftDeactive(){
+    buttons.forEach((item, ind)=>{
+        if(obj.lang == "ru"){
+         if(!notSwitcher.includes(item.tag.dataset.key)){        
+            if(obj.CapsLock){
+                item.tag.textContent = keys[ind].eng.toUpperCase();
+            }else{
+                item.tag.textContent = keys[ind].eng;
+            }
+         }
+        }
+        else{
+             if(!notSwitcher.includes(item.tag.dataset.key)){        
+                if(obj.CapsLock){
+                    item.tag.textContent = keys[ind].ru.toUpperCase();
+                }else{
+                    item.tag.textContent = keys[ind].ru;
+                }
+             }
+        }
+     });
+}
+function togleLangKeys(){
+    if(obj.ctrl && !obj.alt){
+        languageChanger();
+    }else{
+        languageChanger();
+    }
+}
+
+function languageChanger(){
+    if(obj.lang == "ru"){
+        innerTitle();
+        innerTextHTML();
+        obj.lang = "eng";
+    }else{
+        innerTitle();
+        innerTextHTML();
+        obj.lang = "ru";
+    }
+}
+
+function innerTextHTML(){
+    buttons.forEach((item, ind)=>{
+        if(obj.lang == "eng"){
+            if(obj.CapsLock && !notSwitcher.includes(keys[ind].code)){
+                    item.tag.textContent = keys[ind].eng.toUpperCase();
+            }else{
+                item.tag.textContent = keys[ind].eng;
+            }
+        }else{
+            if(obj.CapsLock && !notSwitcher.includes(keys[ind].code)){
+                item.tag.textContent = keys[ind].ru.toUpperCase();
+            }else{
+                item.tag.textContent = keys[ind].ru;
+            }
+        }
+    });
+}
+languageChanger();

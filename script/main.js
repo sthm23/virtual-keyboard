@@ -1,6 +1,6 @@
 import { Keyboard, body } from "./constructor.js";
 import { keys, textTitle } from "./keybords.js";
-
+import {obj} from "./index.js";
 // main
 export const main = new Keyboard("main");
 export const wrapper = new Keyboard("div");
@@ -62,38 +62,14 @@ subtitle.addDataSet("subtitle");
 subtitleBottom.addClassList("subtitle");
 subtitleBottom.addDataSet("lang-change");
 
-
-export function innerTextHTML(){
-    buttons.forEach((item, ind)=>{
-        item.tag.textContent = keys[ind].eng;
-    });
-}
-export function innerRuTextHTML(){
-    buttons.forEach((item, ind)=>{
-        item.tag.textContent = keys[ind].ru;
-    });
-}
-
-export function innerEngTitle(){
-    title.innerText(textTitle[0].eng);
-    subtitle.innerText(textTitle[1].eng);
-    subtitleBottom.innerText(textTitle[2].eng);
-}
-
-export function innerRuTitle(){
-    title.innerText(textTitle[0].ru);
-    subtitle.innerText(textTitle[1].ru);
-    subtitleBottom.innerText(textTitle[2].ru);
-}
-
-export function shiftActive(){
-    buttons.forEach((item, ind)=>{
-       if(!notSwitcher.includes(item.tag.dataset.key)){        
-           if(keys[ind].shift != undefined){
-                item.tag.textContent = keys[ind].shift;
-           }else{
-               item.tag.textContent = keys[ind].eng.toUpperCase();
-           }   
-       }
-    });
+export function innerTitle(){
+    if(obj.lang == "eng"){
+        title.innerText(textTitle[0].eng);
+        subtitle.innerText(textTitle[1].eng);
+        subtitleBottom.innerText(textTitle[2].eng);
+    }else{
+        title.innerText(textTitle[0].ru);
+        subtitle.innerText(textTitle[1].ru);
+        subtitleBottom.innerText(textTitle[2].ru);
+    }
 }
