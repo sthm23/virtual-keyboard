@@ -695,8 +695,8 @@ export const textTitle = [
     },
     {
         title: "lang-change",
-        eng: "To switch the language combination: shift + alt",
-        ru: "Для переключения языка комбинация:  shift + alt",
+        eng: "To switch the language combination: ctrl + alt",
+        ru: "Для переключения языка комбинация:  ctrl + alt",
     },
 ];
 
