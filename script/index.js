@@ -10,9 +10,16 @@ export const obj = {
     ctrl: false,
     lang: "eng",
 };
+// setLocalStorage();
+function setLocalStorage(){
+    if(obj.lang === "eng"){
+        localStorage.setItem("languag", "ru");
+    }else{
+        localStorage.setItem("languag", "eng");
+    }
+}
 
-
-
+obj.lang = localStorage.getItem("languag");
 
 
 //write with mouse
@@ -198,10 +205,12 @@ function languageChanger(){
         innerTitle();
         innerTextHTML();
         obj.lang = "eng";
+        setLocalStorage();
     }else{
         innerTitle();
         innerTextHTML();
         obj.lang = "ru";
+        setLocalStorage();
     }
 }
 
@@ -223,3 +232,6 @@ function innerTextHTML(){
     });
 }
 languageChanger();
+
+
+
