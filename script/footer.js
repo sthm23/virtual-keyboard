@@ -33,5 +33,3 @@ imgCenter.innerSrc("./assets/icons/rs_school.svg");
 imgCenter.innerAlt("rs school icon");
 imgRight.innerSrc("./assets/icons/github__icon.png");
 imgRight.innerAlt("github icon");
-
-// footer.addListenerClick();

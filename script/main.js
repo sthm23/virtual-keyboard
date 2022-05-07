@@ -10,6 +10,8 @@ export const keyboards = new Keyboard('div');
 export const subtitle = new Keyboard('h4');
 export const subtitleBottom = new Keyboard('h4');
 export let buttons = [];
+export const notSwitcher = ["Backspace", "Tab", 'Delete', "CapsLock", "Enter", "ShiftLeft",
+"ShiftRight", "ControlLeft", "MetaLeft", "AltLeft", "Space", "AltRight","ControlRight",];
 
 for(let i = 0; i<keys.length; i++){
     let button = new Keyboard('button');
@@ -61,109 +63,44 @@ subtitleBottom.addClassList('subtitle');
 subtitleBottom.addDataSet('lang-change');
 
 
-buttons.forEach((item, ind)=>{
-    item.tag.textContent = keys[ind].eng;
-});
+export function innerTextHTML(){
+    buttons.forEach((item, ind)=>{
+        item.tag.textContent = keys[ind].eng;
+    });
+}
+
 export function innerEngTitle(){
     title.innerText(textTitle[0].eng);
     subtitle.innerText(textTitle[1].eng);
     subtitleBottom.innerText(textTitle[2].eng);
 }
-innerEngTitle();
+
 export function innerRuTitle(){
     title.innerText(textTitle[0].ru);
     subtitle.innerText(textTitle[1].ru);
     subtitleBottom.innerText(textTitle[2].ru);
 }
 
-
-//write with mouse
-keyboards.tag.addEventListener('click', (e)=>{
-    const target = e.target;
-    buttons.forEach(item=>{
-        if(item.tag == target){
-            // console.log(item);
-            write(target, item.upper);
-        }
+export function shiftActive(){
+    buttons.forEach((item, ind)=>{
+       if(!notSwitcher.includes(item.tag.dataset.key)){        
+           if(keys[ind].shift != undefined){
+                item.tag.textContent = keys[ind].shift;
+           }else{
+               item.tag.textContent = keys[ind].eng.toUpperCase();
+           }   
+       }
     });
-});
-// keyboards.tag.addEventListener('mouseup', (e)=>{
-//     const target = e.target;
-//     buttons.forEach(item=>{        
-//         if(item.tag == target){
-//             write(target, item.upper);
-//         }
+}
+// export function shiftDeactive(){
+//     buttons.forEach((item, ind)=>{
+//        if(!notSwitcher.includes(item.tag.dataset.key)){
+//            if(keys.shift != undefined){
+//                 item.tag.textContent = keys[ind].eng;
+//            }else{
+                
+//            }
+           
+//        }
 //     });
-// });
-//keyboard 
-body.addEventListener('keydown', (e)=>{
-    e.preventDefault();
-
-    buttons.forEach(item=>{
-        if(item.tag.dataset.key === e.code){
-            console.log(item)
-            item.addClassList('key-active');
-            write(item.tag);
-        }
-    });
-});
-body.addEventListener('keyup', (e)=>{
-    e.preventDefault();
-
-    buttons.forEach(item=>{
-        if(item.tag.dataset.key === e.code){
-            item.tag.classList.remove('key-active');
-            // write(item.tag);
-        }
-    });
-});
-
-function write(elem, item){
-    if(elem.textContent == 'Backspace'){
-        let str = removeLeft(textarea.tag.value);
-        textarea.tag.value = str;
-    }else if(elem.textContent == 'Space'){
-        textarea.tag.value += ' ';
-    }else if(elem.textContent == 'Enter'){
-        textarea.tag.value += '\n';
-    }else if(elem.textContent == 'Tab'){
-        textarea.tag.value += '    ';
-    }else if(elem.textContent == 'Window'){
-        
-    }else if(elem.textContent == 'Shift'){
-            // upperCase(item);
-    }else if(elem.textContent == 'Del'){
-        
-    }else if(elem.textContent == 'ctrl'){
-        
-    }else if(elem.textContent == 'Alt'){
-        
-    }else{
-        textarea.tag.value += elem.textContent;
-    }
-}
-
-function removeLeft(str){
-    let len = str.length-1;
-    let a = str.split('');
-    a.splice(len, 1);
-    return a.join('');
-}
-
-function upperCase(bool){
-    if(bool){
-        bool = false;
-        keys.forEach((item, ind)=>{
-            if(item.shift){
-                buttons[ind].tag.textContent = item.shift;
-            }else if(item.code != 'Backspace' || item.code != 'Del' || item.code != 'Enter' || item.code != 'Tab' || item.code != 'CapsLock' || item.code != 'ShiftRight' || item.code != 'ShiftLeft'){
-                buttons[ind].tag.textContent = buttons[ind].tag.textContent.toUpperCase();
-            }
-        });
-    }else{
-        bool = true;
-        keys.forEach((item, ind)=>{
-            buttons[ind].tag.textContent = item.eng;
-        });
-    }
-}
+// }
