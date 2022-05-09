@@ -9,6 +9,7 @@ export const obj = {
     shift: false,
     ctrl: false,
     lang: "eng",
+    ruShift: ["ё", "х", "ъ", "ж", "э", "б", "ю"],
 };
 // setLocalStorage();
 function setLocalStorage(){
@@ -161,8 +162,8 @@ function shiftActive(){
         }
        }else{
             if(!notSwitcher.includes(item.tag.dataset.key)){        
-                if(keys[ind].shift != undefined){
-                    item.tag.textContent = keys[ind].shift;
+                if(keys[ind].shift != undefined && !obj.ruShift.includes(item.tag.textContent)){
+                    keys[ind].shift === "?" ? item.tag.textContent = "," : item.tag.textContent = keys[ind].shift;
                 }else{
                     item.tag.textContent = keys[ind].ru.toUpperCase();
                 }   
