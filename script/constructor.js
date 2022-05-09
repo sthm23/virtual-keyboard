@@ -1,9 +1,6 @@
 export class Keyboard {
     constructor(tag){
         this.tag = document.createElement(tag);
-        this.lang = true;
-        this.capsLock = false;
-        this.upper = true;
     }
 
     addClassList(className){

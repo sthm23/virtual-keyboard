@@ -9,10 +9,18 @@ export const obj = {
     shift: false,
     ctrl: false,
     lang: "eng",
+    ruShift: ["ё", "х", "ъ", "ж", "э", "б", "ю"],
 };
+// setLocalStorage();
+function setLocalStorage(){
+    if(obj.lang === "eng"){
+        localStorage.setItem("languag", "ru");
+    }else{
+        localStorage.setItem("languag", "eng");
+    }
+}
 
-
-
+obj.lang = localStorage.getItem("languag");
 
 
 //write with mouse
@@ -154,8 +162,8 @@ function shiftActive(){
         }
        }else{
             if(!notSwitcher.includes(item.tag.dataset.key)){        
-                if(keys[ind].shift != undefined){
-                    item.tag.textContent = keys[ind].shift;
+                if(keys[ind].shift != undefined && !obj.ruShift.includes(item.tag.textContent)){
+                    keys[ind].shift === "?" ? item.tag.textContent = "," : item.tag.textContent = keys[ind].shift;
                 }else{
                     item.tag.textContent = keys[ind].ru.toUpperCase();
                 }   
@@ -198,10 +206,12 @@ function languageChanger(){
         innerTitle();
         innerTextHTML();
         obj.lang = "eng";
+        setLocalStorage();
     }else{
         innerTitle();
         innerTextHTML();
         obj.lang = "ru";
+        setLocalStorage();
     }
 }
 
@@ -223,3 +233,6 @@ function innerTextHTML(){
     });
 }
 languageChanger();
+
+
+
