@@ -26,6 +26,7 @@ obj.lang = localStorage.getItem("languag");
 //write with mouse
 keyboards.tag.addEventListener("click", (e)=>{
     const target = e.target;
+    textarea.tag.focus();
     buttons.forEach(item=>{
         if(item.tag == target){
             write(target);
