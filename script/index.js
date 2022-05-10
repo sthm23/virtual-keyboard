@@ -8,8 +8,9 @@ export const obj = {
     CapsLock: false,
     shift: false,
     ctrl: false,
+    alt: false,
     lang: "eng",
-    ruShift: ["ё", "х", "ъ", "ж", "э", "б", "ю"],
+    ruShift: ["ё", "х", "ъ", "ж", "э", "б", "ю", "Ё", "Х", "Ъ", "Ж", "Э", "Б", "Ю"],
 };
 // setLocalStorage();
 function setLocalStorage(){
@@ -20,7 +21,8 @@ function setLocalStorage(){
     }
 }
 
-obj.lang = localStorage.getItem("languag");
+localStorage.getItem("languag") == null ? obj.lang = "eng" : obj.lang = localStorage.getItem("languag");
+
 
 
 //write with mouse
