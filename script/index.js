@@ -111,7 +111,8 @@ function write(elem){
         // textarea.tag.value += "\n";
         textarea.tag.setRangeText("\n", textarea.tag.selectionStart, textarea.tag.selectionEnd, "end");
     }else if(elem.textContent == "Tab"){
-        textarea.tag.value += "    ";
+        // textarea.tag.value += "    ";
+        textarea.tag.setRangeText("    ", textarea.tag.selectionStart, textarea.tag.selectionEnd, "end");
     }else if(elem.textContent == "Window"){
         // кнопка виндов не будет работать
     }else if(elem.textContent == "CapsLock"){
