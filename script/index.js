@@ -105,9 +105,11 @@ function write(elem){
             textarea.tag.setRangeText("", textarea.tag.selectionStart-1, textarea.tag.selectionEnd, "end");
         }
     }else if(elem.textContent == "Space"){
-        textarea.tag.value += " ";
+        // textarea.tag.value += " ";
+        textarea.tag.setRangeText(" ", textarea.tag.selectionStart, textarea.tag.selectionEnd, "end");
     }else if(elem.textContent == "Enter"){
-        textarea.tag.value += "\n";
+        // textarea.tag.value += "\n";
+        textarea.tag.setRangeText("\n", textarea.tag.selectionStart, textarea.tag.selectionEnd, "end");
     }else if(elem.textContent == "Tab"){
         textarea.tag.value += "    ";
     }else if(elem.textContent == "Window"){
